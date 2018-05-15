@@ -41,6 +41,7 @@
 # These values are used if no command line argument (--src) is passed to a
 # compile script. Empty strings means not configured.
 declare -A InstallationDirectories
+InstallationDirectories[ActelLibero]=""       # "/usr/local/microsemi/Libero_v11.7/Libero"
 InstallationDirectories[AlteraQuartus]=""     # "/opt/altera/16.0/quartus"
 InstallationDirectories[IntelQuartus]=""      # "/opt/intelFPGA/17.1/quartus"
 InstallationDirectories[LatticeDiamond]=""    # "/usr/local/diamond/3.7_x64"
@@ -51,6 +52,7 @@ InstallationDirectories[XilinxVivado]=""      # "/opt/Xilinx/Vivado/2017.4"
 
 # Configure preferred output directories for each library set:
 declare -A DestinationDirectories
+DestinationDirectories[ActelLibero]="microsemi"
 DestinationDirectories[AlteraQuartus]="altera"
 DestinationDirectories[IntelQuartus]="intel"
 DestinationDirectories[LatticeDiamond]="lattice"
@@ -61,6 +63,7 @@ DestinationDirectories[XilinxVivado]="xilinx-vivado"
 
 # Declare source directories depending on the installation paths:
 declare -A SourceDirectories
+SourceDirectories[ActelLibero]="lib/vtl/95"
 SourceDirectories[AlteraQuartus]="eda/sim_lib"
 SourceDirectories[IntelQuartus]="eda/sim_lib"
 SourceDirectories[LatticeDiamond]="cae_library/simulation/vhdl"

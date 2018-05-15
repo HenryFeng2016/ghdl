@@ -197,12 +197,12 @@ if [ $VHDLStandard -eq 2008 ]; then
 	HALT_ON_ERROR=0
 fi
 
-DefaultDirectories=("/opt/Altera" "/opt/altera")
+DefaultDirectories=("/opt/Altera" "/opt/altera" "/opt/intelFPGA")
 if [ ! -z $QUARTUS_ROOTDIR ]; then
 	EnvSourceDir=$QUARTUS_ROOTDIR/${SourceDirectories[AlteraQuartus]}
 else
 	for DefaultDir in ${DefaultDirectories[@]}; do
-		for Major in 17 16 15 14 13; do
+		for Major in 18 17 16 15 14 13; do
 			for Minor in 3 2 1 0; do
 				Dir=$DefaultDir/${Major}.${Minor}/quartus
 				if [ -d $Dir ]; then
